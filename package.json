@@ -1,0 +1,32 @@
+{
+  "name": "PrelixBot",
+  "version": "1.0.0-alpha-1",
+  "description": "A Discord bot",
+  "readme": "https://github.com/cernodile/PrelixBot/blob/master/README.md",
+  "maintainers": [
+    "Stolen <sten.villiam@outlook.com>"
+  ],
+  "author": {
+    "name": "Joann Mõndresku",
+    "email": "joann.mondresku@gmail.com",
+    "url": "http://www.thegamequarry.ml"
+  },
+  "bugs": {
+    "url": "https://github.com/cernodile/PrelixBot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cernodile/PrelixBot.git"
+  },
+  "engines": {
+    "node": "^5.x.x",
+    "npm" : ">=3.x.x"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "discord.js": "^7.0.0",
+    "request": "^2.61.0",
+    "unirest": "^0.4.2"
+  },
+  "main": "PrelixBot.js"
+}

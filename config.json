@@ -1,0 +1,16 @@
+{
+	"login": {
+		"token": "your bot token"
+	},
+	"misc": {
+		"prefix": ">",
+		"appid": "your app ID"
+	},
+	"perms": {
+		"masterUser": ["enter your id", "friends id"],
+		"vip": ["expand this array", "for", "more", "vipUsers"]
+	},
+	"api": {
+		"mashape": "insert your mashape key here"
+	}
+}
