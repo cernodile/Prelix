@@ -11,7 +11,7 @@ Discord bot. Written from scratch using **discord.js** by **hydrabolt**. Bot cre
 Installing Prelix is fairly simple, you only need to enter `npm install` into the console/terminal, edit `config.json` to your liking.
 If you want your bot to automaticaly restart after crashing, search up `pm2` module in Google, it's really worth it!
 To start the bot, you need to type in either `node PrelixBot.js` or `pm2 start PrelixBot.js --name YourBot` if you got pm2 installed.
-Feel free to contribute!
+If you wish to stream music, please install FFMPEG (Linux: `sudo apt-get install ffmpeg`)!
 
 ### Join our support server!
 [![Discord](https://discordapp.com/api/servers/148473446236422144/widget.png?style=banner3)](https://discord.gg/0pPzG7d0M2hZsa7m)
