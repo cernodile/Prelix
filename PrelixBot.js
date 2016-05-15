@@ -8,6 +8,8 @@ var bot = PrelixBot;
 var prefix = config.misc.prefix;
 var masterUser = config.perms.masterUser;
 var vipUser = config.perms.vip;
+var YT = require('ytdl-core');
+  var fs = require('fs');
 
 //REQUESTS
 var unirest = require('unirest');
@@ -16,10 +18,12 @@ console.log('> Loading PrelixBot...');
 
 PrelixBot.on('message', function(msg, suffix)
 {
+	var playlistid = [];
 	/*
 	* Commands
 	*/
-	var commands = ['help', ' ping', ' invite', ' ayy', ' kill', ' eval', ' server', ' cat', ' say', ' stats', ' price', ' ship', ' myinfo'];
+	var commands1 = ['help', ' ping', ' invite', ' ayy', ' kill', ' eval', ' server', ' cat', ' say', ' stats', ' price', ' ship'];
+	var commands2 = ['myinfo', ' voice', ' request', ' leave'];
 	var content = msg.content.toLowerCase();
 	// cmd lengths
 	var cmd1 = 'help';
@@ -38,23 +42,50 @@ PrelixBot.on('message', function(msg, suffix)
 	var cmd14 = 'myinfo';
 	var cmd15 = 'voice';
 	var cmd16 = 'request';
+	var cmd17 = 'leave';
 	// suffixes
 	var suffix5 = msg.content.substring(cmd5.length + (prefix.length + 1)); // msg.content
 	var suffix8 = content.substring(cmd8.length + (prefix.length + 1));
 	var suffix10 = content.substring(cmd10.length + (prefix.length + 1));
 	var suffix12 = content.substring(cmd12.length + (prefix.length + 1));
 	var suffix13 = content.substring(cmd13.length + (prefix.length + 1));
-	var requestSuffix = msg.content.substring(cmd16.length + (prefix.length + 1));
 	
 	if(content === prefix + cmd1) {
 		var msgArray = [];
 		msgArray.push('The current commands available are;');
 		msgArray.push('```diff');
 		msgArray.push('!============================================================================!');
-		msgArray.push('+ ' + commands);
+		msgArray.push('+ ' + commands1);
+		msgArray.push('+ ' + commands2);
 		msgArray.push('!============================================================================!');
 		msgArray.push('```');
 		bot.sendMessage(msg.channel, msgArray.join('\n'));
+	}
+	if (content.startsWith(prefix + cmd16)) {
+		try {
+var suffix = msg.content.substring(cmd16.length + (prefix.length + 1));
+if(!bot.voiceConnection.playing) {
+  var ytdl = YT(suffix, {
+    quality: 140
+  });
+  ytdl.on('error', function() {
+    console.log("> YTDL error, could be because of undefined requests.");
+    return;
+  });
+  ytdl.on('end', function() {
+  	console.log("> Testing output if stream ended.");
+  });
+  bot.voiceConnection.playRawStream(ytdl, {volume: 0.50, stereo: true});
+  bot.sendMessage(msg.channel, "Song requested!");
+} else if (bot.voiceConnection.playing) {
+  bot.sendMessage(msg.channel, "Busy test!");
+  return;
+}
+	} catch(e) {
+		bot.sendMessage(msg.channel, "Oops! It seems as there's something wrong!");
+		console.log(e);
+	}
+	console.log('> ' + msg.sender.username + ' executed <' + cmd16 + '>')
 	}
 	if(content == prefix + cmd2)
 	{
@@ -205,6 +236,7 @@ PrelixBot.on('message', function(msg, suffix)
 		bot.sendMessage(msg.channel, msgArray.join('\n'));
 		console.log('> ' + msg.sender.username + ' executed <' + cmd14 + '>')
 	}
+	var wait = false;
 	if (content.startsWith(prefix + cmd15)) {
 		if(vipUser.indexOf(msg.sender.id) > -1 || masterUser.indexOf(msg.sender.id) > -1) {
 		try {
@@ -219,23 +251,15 @@ PrelixBot.on('message', function(msg, suffix)
 			console.log('> ' + msg.sender.username + ' attempted to execute <'+cmd15+'>')
 	}
 	}
-	if (content.startsWith(prefix + cmd16)) {
-		if(vipUser.indexOf(msg.sender.id) > -1 || masterUser.indexOf(msg.sender.id) > -1) {
-		try {
-		var YT = require('ytdl-core'); 
-  	var ytdl = YT(requestSuffix + '', {
-    quality: 140
-  }); bot.voiceConnection.playRawStream(ytdl, {
-    volume: 0.50,
-    stereo: true
-  });
-  bot.sendMessage(msg.channel, "Song requested!");
-	} catch(e) {
-		bot.sendMessage(msg.channel, "Oops! It seems as there's something wrong!");
-		console.log(e);
-	}
-	console.log('> ' + msg.sender.username + ' executed <' + cmd16 + '>')
-	}
+	if(content.startsWith(prefix + cmd17)) {
+		if (msg.channel.server && masterUser.indexOf(msg.sender.id) > -1 || msg.channel.server && msg.sender == msg.channel.server.owner) {
+      bot.sendMessage(msg.channel, "Well, if you don't want me here, bye! :(", (err, msg) => {
+      	bot.leaveServer(msg.channel.server);
+      });
+      console.log("info", "I've left a server on request of " + msg.sender.username + ", I'm only in " + bot.servers.length + " servers now.");
+    } else {
+      bot.sendMessage(msg.channel, "Sorry, either you're sending this from a DM or you're not server owner!");
+    }
 	}
 });	
 PrelixBot.loginWithToken(config.login.token);
@@ -243,12 +267,16 @@ PrelixBot.on('ready', function() {
 	console.log('> Success! Your bot is now online!');
 	console.log('> Logged in as ' + bot.user.username + '#' + bot.user.discriminator + ', serving '  + bot.users.length + ' users in ' + bot.servers.length + ' servers!');
 });
+
 PrelixBot.on('uncaughtException', function(err) {
-  if (err.code === 'ECONNRESET') {
-    console.log("Got an ECONNRESET error, this seems to be bug of YT-DL!");
-    console.log(err);
+  // Handle ECONNRESETs caused by `next` or `destroy`
+  if (err.code == 'ECONNRESET') {
+    console.log('Got an ECONNRESET! This is *probably* not an error. Stacktrace:');
+    console.log(err.stack);
   } else {
+    // Normal error handling
     console.log(err);
-    process.exit(1);
+    console.log(err.stack);
+    process.exit(0);
   }
 });
