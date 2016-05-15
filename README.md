@@ -14,4 +14,4 @@ To start the bot, you need to type in either `node PrelixBot.js` or `pm2 start P
 Feel free to contribute!
 
 ### Join our support server!
-[![Discord](https://discordapp.com/api/servers/148473446236422144/widget.png?style=banner2)](https://discord.gg/0pPzG7d0M2hZsa7m)
+[![Discord](https://discordapp.com/api/servers/148473446236422144/widget.png?style=banner3)](https://discord.gg/0pPzG7d0M2hZsa7m)
