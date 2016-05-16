@@ -4,7 +4,7 @@ Discord bot. Written from scratch using **discord.js** by **hydrabolt**. Bot cre
 [![Node](https://img.shields.io/badge/Node-5.x.x-green.svg)](http://nodejs.org)
 [![NPM](https://img.shields.io/badge/NPM-3.x.x-blue.svg)](http://nodejs.org)
 [![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)]()
-[![Version](https://img.shields.io/badge/Version-1.0.0_alpha.2-yellow.svg)](https://github.com/SteamingMutt/WildBeast/releases)
+[![Version](https://img.shields.io/badge/Version-1.0.0_alpha.3-yellow.svg)](https://github.com/SteamingMutt/WildBeast/releases)
 [![Status](https://img.shields.io/badge/Status-Indev-yellow.svg)]()
 ## Installation
 **Please make sure you're using Node with any 5.x version and have NPM 3.x version!**
