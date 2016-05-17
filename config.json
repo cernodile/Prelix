@@ -1,0 +1,20 @@
+{
+	"login": {
+		"token": "your bot token",
+		"botuser": "true",
+		"email": "user email",
+		"password": "user password"
+	},
+	"misc": {
+		"prefix": ">",
+		"appid": "your app ID"
+	},
+	"perms": {
+		"masterUser": ["enter your id", "friends id"],
+		"vip": ["expand this array", "for", "more", "vipUsers"]
+	},
+	"api": {
+		"mashape": "insert your mashape key here",
+		"youtube": "insert your youtube api key here"
+	}
+}
