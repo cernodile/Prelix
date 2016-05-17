@@ -1,9 +1,14 @@
 {
 	"login": {
-		"token": "your bot token"
+		"token": "your bot token",
+		"selfbot": "false",
+		"botuser": "true",
+		"email": "user email",
+		"password": "user password"
 	},
 	"misc": {
 		"prefix": ">",
+		"selfbotprefix": "",
 		"appid": "your app ID"
 	},
 	"perms": {
