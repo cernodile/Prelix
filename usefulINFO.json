@@ -1,0 +1,45 @@
+{
+    "useful_comments": [
+        "Please only enable debug_mode or verbose_logging if requested by one of the devs, as enabling this extends the logging capabilities and could potentially include sensitive info.",
+        "Command prefixes are length dynamic, meaning that prefixes can be as long as you want, change the value to `mention` to switch to mention activation.",
+        "help_mode can either be `private` or `channel`"
+    ],
+
+    "discord" : {
+        "token_mode" : true,
+        "token": "MTY4NzAzMDAxNTgwNjY2ODgw.CevcaQ.dQ0QaRA4Xjoe2JsY5uxP6VwrUAA",
+		"oauth_url": "https://discordapp.com/oauth2/authorize?&client_id=168702562625781760&scope=bot"
+    },
+    "bot_settings" : {
+        "cmd_prefix": ">",
+        "help_mode": "private",
+        "log_chat": false,
+        "music_timeouts": false,
+        "namechange_log": true,
+        "disable_music_commands": false,
+        "verbose_logging": false,
+        "debug_mode": false,
+        "upgrade_mode": false,
+        "keymetrics": false
+    },
+    "join_on_launch" : [
+        "https://discord.gg/0cFoiR5QVh4agupi",
+        "https://discord.gg/0cFoiR5QVh57Spqg"
+    ],
+    "api_keys" : {
+		"google_key": "AIzaSyD1qXx7ptlmnW87_la6mW8ln54BqyXb5pM",
+		"cse_key": "007575778977761945879:b_upsfyymik",
+		"mashape_key": "Bat3sVfeLlmshVo69OXoTxx6ZHsdp1jG80Ijsn5U2v106WGoQ6",
+		"myapifilms_token": "token"
+	},
+	"imgflip" : {
+		"username": "iStolen",
+		"password": "Mm123456"
+	},
+	"permissions" : {
+        "masterUser": ["154603113079111680", "154578730809819136", "Discord", "ID"],
+        "level1": ["Global", "level 1", "users", "Discord", "ID"],
+        "level2": ["136008306622726144", "level 2", "users", "Discord", "ID"],
+        "level3": ["Global", "level 3", "144406994260852736", "no more global lmao teakup", "ID"]
+    }
+}

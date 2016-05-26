@@ -1,20 +1,31 @@
 {
 	"login": {
-		"token": "your bot token",
+		"token": "token",
+		"selfbottoken": "token",
+		"selfbot": "false",
 		"botuser": "true",
 		"email": "user email",
-		"password": "user password"
+		"password": "user password",
+		"selfemail": "selfbot email",
+		"selfpass": "selfbot password"
 	},
 	"misc": {
 		"prefix": ">",
-		"appid": "your app ID"
+		"selfbotprefix": "",
+		"appid": "app id",
+		"selfbotid": "selfbot app id"
+	},
+	"selfbot": {
+		"masterUser": ["kek", "reserved"]
 	},
 	"perms": {
-		"masterUser": ["enter your id", "friends id"],
-		"vip": ["expand this array", "for", "more", "vipUsers"]
+		"masterUser": ["kek"],
+		"vip": ["vip"],
+		"blacklist": ["put some blacklist st0ff here"],
+		"selfbot": ["add users you want to add perm for"]
 	},
 	"api": {
-		"mashape": "insert your mashape key here",
-		"youtube": "insert your youtube api key here"
+		"mashape": "mashape",
+		"youtube": "utube"
 	}
 }
