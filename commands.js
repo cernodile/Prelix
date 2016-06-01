@@ -1,8 +1,8 @@
-﻿var config = require('./config.json');
+var config = require('./config.json');
 var musicHandler = require('./musichandler.js');
 var Cleverbot = require('cleverbot-node');
-var unirest = require('unirest');
 var cleverbot = new Cleverbot();
+var unirest = require('unirest');
 var masterUser = config.perms.masterUser;
 var vipUser = config.perms.vip;
 var versionJSON = require('./version.json');
@@ -11,9 +11,9 @@ var alphaversion = versionJSON.alphaversion;
 var betaversion = versionJSON.betaversion;
 var dataValues = require('./data/userdata.json');
 var saveData = function(){fs.writeFile("./data/userdata.json", JSON.stringify(dataValues, null, 4), 'utf8', function(err){if(err){throw err}})};
-var userdata;
-var redeem = require('./data/redeem.json');
-var achieves = require("./data/achieves.json");
+var userdata; // Userdata variable
+var redeem = require('./data/redeem.json'); // Loads redeem data file
+var achieves = require("./data/achieves.json"); // Loads achievements data file
 var saveAchieves = function(){fs.writeFile("./data/achieves.json", JSON.stringify(achieves, null, 4), 'utf8', function(err){if(err){throw err}})};
 var achievement;
 var fs = require('fs');
