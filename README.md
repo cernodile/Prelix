@@ -6,6 +6,7 @@ Discord bot. Written from scratch using **discord.js** by **hydrabolt**. Bot cre
 [![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)]()
 [![Version](https://img.shields.io/badge/Version-1.0.0_beta.1-yellow.svg)](https://github.com/SteamingMutt/WildBeast/releases)
 [![Status](https://img.shields.io/badge/Status-Indev-yellow.svg)]()
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 ## Installation
 **Please make sure you're using Node with any 5.x version and have NPM 3.x version!**
 Installing Prelix is fairly simple, you only need to enter `npm install` into the console/terminal, edit `config.json` to your liking.
@@ -15,3 +16,6 @@ If you wish to stream music, please install FFMPEG and required tools. (Linux: `
 
 ### Join our support server!
 [![Discord](https://discordapp.com/api/servers/148473446236422144/widget.png?style=banner3)](https://discord.gg/0pPzG7d0M2hZsa7m)
+
+### We also use JS Standard Code Style!
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
