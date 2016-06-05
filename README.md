@@ -1,5 +1,5 @@
 # Prelix
-Discord bot. Written from scratch using **discord.js** by **hydrabolt**. Bot created by **Joann Mõndresku** and **Stolen**.
+Discord bot. Written from scratch using **discord.js** by **hydrabolt**. Bot created by **Joann Mõndresku**.
 ### Information
 [![Node](https://img.shields.io/badge/Node-5.x.x-green.svg)](http://nodejs.org)
 [![NPM](https://img.shields.io/badge/NPM-3.x.x-blue.svg)](http://nodejs.org)
