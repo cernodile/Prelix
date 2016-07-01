@@ -1,3 +1,4 @@
+# This version of bot is discontiniued! Stay tuned for Prelix-v2 using the Eris library. :)
 # Prelix
 Discord bot. Written from scratch using **discord.js** by **hydrabolt**. Bot created by **Joann Mõndresku**.
 ### Information
